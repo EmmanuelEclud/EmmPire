@@ -57,7 +57,7 @@
 
   /* Presentación */
   #Presentacion {
-    background-image: url(IMG/FONDOPRINCIPAL.PNG);
+    background-image: url(img/FONDOPRINCIPAL.PNG);
     padding: 20px 180px;
     /* filter: brightness(0.7); Reduce el brillo de la imagen para oscurecerla  */
     background-position: center;
@@ -226,19 +226,19 @@
   
   /* Categorías específicas con imágenes de fondo */
   .categoria-1 {
-    background-image: url('IMG/INGENIERIA.PNG'); /* Cambia esta URL */
+    background-image: url('img/INGENIERIA.PNG'); /* Cambia esta URL */
   }
   
   .categoria-2 {
-    background-image: url('IMG/ajedrez.jpg'); /* Cambia esta URL */
+    background-image: url('img/ajedrez.jpg'); /* Cambia esta URL */
   }
   
   .categoria-3 {
-    background-image: url('IMG/PROGRAMACION.PNG'); /* Cambia esta URL */
+    background-image: url('img/PROGRAMACION.PNG'); /* Cambia esta URL */
   }
   
   .categoria-4 {
-    background-image: url('IMG/LOGICA.jpg'); /* Cambia esta URL */
+    background-image: url('img/LOGICA.jpg'); /* Cambia esta URL */
   }
   
   #inspiracion{
@@ -289,7 +289,7 @@
 
   .U2{
     font-weight: 500;
-    background-image: url(IMG/kraken.jpg);
+    background-image: url(img/kraken.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
