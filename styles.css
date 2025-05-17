@@ -1,0 +1,463 @@
+:root {
+    --background-color: #1a0825;  /* Morado oscuro */
+    --text-color: #e0e0e0;       /* Texto claro */
+    --header-bg-color: #2b0e3d;  /* Header ligeramente más claro */
+    --button-bg-color: #4a1b6d;  /* Color de los botones */
+    --button-text-color: #ffffff;
+    --button-hover-bg-color: #6c2389;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    background-color: var(--header-bg-color);
+    padding: 1.2rem;
+  }
+  
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .header-title {
+    flex: 4;
+    color: var(--text-color);
+  }
+  
+  #logotext {
+    height: 50px;
+    width: 170PX;
+    margin-left: 100px;
+    cursor: pointer;
+    padding-top: 8px;
+    filter: drop-shadow(0 0 3px rgba(0, 0, 255, 0.5));
+  }
+  #logotext:hover{
+    filter: drop-shadow(0 0 8px rgba(255, 0, 0, 0.5));
+    transform: scale(1.15);  /* Efecto de agrandado */
+  }
+
+  #imgboton{
+    height: 75px;
+    min-width: 150PX;
+    filter: drop-shadow(0 0 8px rgba(255, 0, 255, 0.5));
+    margin-right: 70px;
+    transition: 0.2s ease;
+  }
+  #imgboton:hover {
+    content: url('IMG/BCOMPLETO.PNG'); /* Cambia la imagen al hacer hover */
+  }
+
+  /* Presentación */
+  #Presentacion {
+    background-image: url(IMG/FONDOPRINCIPAL.PNG);
+    padding: 20px 180px;
+    /* filter: brightness(0.7); Reduce el brillo de la imagen para oscurecerla  */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; /* Hace que la imagen cubra todo el fondo */
+  }
+  
+  #Inicio {
+    border-radius: 15px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0,0.5);
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  /* Clase C1 - Asegura que el contenedor sea relativo */
+  .C1 {
+    position: relative; /* Establece el contenedor como referencia para el posicionamiento absoluto */
+    font-size: 2rem;
+    text-transform: uppercase;
+    color: wheat;
+    text-shadow: 0 0 3PX black;
+    min-height: 50vh; /* Asegura que tenga suficiente altura */
+    padding-left: 20px;
+  }
+
+  .C2{
+    padding-right: 20px;
+    text-align: right;    
+    filter: drop-shadow(0 0 14px rgba(255, 0, 255, 0.5));
+  }
+  .C2 img{
+    margin-left: 100px;
+    height: 45vh;
+  }
+  .C2 a{
+    padding: 14px;
+    text-decoration: none;
+    color: white;
+    background-color: #1a0825;
+    border-radius: 40px;
+  }
+  .C2 a:hover{
+    background-color: #6c2389;
+    color: var(--background-color);
+    border: 3px solid var(--background-color);
+  
+  }
+  
+  /* Clase .ine - Posicionamiento en la esquina inferior izquierda */
+  .ine {
+    position: absolute;  /* Posicionamiento absoluto */
+    bottom: 0;           /* Se coloca en la parte inferior */
+    left: 0;             /* Se alinea a la izquierda */
+    max-width: 25vw;     /* Asegura que no ocupe todo el ancho */
+    padding: 10px;       /* Añade algo de espacio alrededor del texto */
+     /* Fondo semi-transparente para legibilidad */
+    color: var(--text-color); /* Usa el color de texto de la paleta */
+  }
+  
+  
+  /* Contenedores */
+  .cot {
+    flex: 1;
+    min-height: 50vh;
+    max-width: 60vh;
+  }
+  
+  /* Categorías */
+  #categorias {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+    grid-gap: 3rem 6rem;  /* Espacio entre los elementos */
+    margin: 2rem auto;
+    max-width: 85%;  /* Ancho máximo del contenedor para que quede centrado */
+    text-shadow: 0 0 2px black;
+  }
+  
+  .categoria {
+    position: relative;
+    background-color: #333;
+    border-radius: 10px;
+    padding: 1rem;
+    text-align: center;
+    min-width: 200px;
+    height: 200px;
+    color: #fff;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    
+  }
+
+  
+  
+  /* Botón oculto inicialmente */
+  .btn-categoria {
+    display: none;
+    margin-bottom: 10px;
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--button-bg-color);
+    color: var(--button-text-color);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+  }
+  
+  .categoria:hover .btn-categoria {
+    display: block;
+    
+  }
+
+  .categoria h3{
+    color: white;
+    text-shadow: 0 0 4px black;
+  }
+  
+  /* Texto oculto inicialmente */
+  .categoria p {
+    display: none;
+  }
+  
+  .categoria:hover p{
+    display: block;
+    padding: 38px;
+    margin: 0;
+    padding: 10px;
+    height: 140px;
+    background-color: rgba(0, 0, 0, 0.719);
+  }
+
+  .categoria:hover h3{
+    margin: 0;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.719);
+  }
+  
+  /* Hover sobre la categoría */
+  .categoria:hover::before {
+    
+    background-color: rgba(0, 0, 0, 0.2); /* Reducimos la opacidad en hover */
+  }
+  
+  .categoria:hover {
+    transform: scale(1.05);  /* Efecto de agrandado */
+    box-shadow: 0 0px 20px rgba(117, 117, 117, 0.5);  /* Sombra en hover */
+    /*  
+    filter: brightness(0.7); Reduce el brillo de la imagen para oscurecerla 
+    */
+  }
+  
+  /* Hover en el botón para cambiar el color al pasar el ratón */
+  .btn-categoria:hover {
+    background-color: var(--button-hover-bg-color);
+  }
+  
+  /* Categorías específicas con imágenes de fondo */
+  .categoria-1 {
+    background-image: url('IMG/INGENIERIA.PNG'); /* Cambia esta URL */
+  }
+  
+  .categoria-2 {
+    background-image: url('IMG/ajedrez.jpg'); /* Cambia esta URL */
+  }
+  
+  .categoria-3 {
+    background-image: url('IMG/PROGRAMACION.PNG'); /* Cambia esta URL */
+  }
+  
+  .categoria-4 {
+    background-image: url('IMG/LOGICA.jpg'); /* Cambia esta URL */
+  }
+  
+  #inspiracion{
+    display: flex;
+    margin: 10px 10vw ;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 40px;
+  }
+  .inspiracion1{
+    text-align: center;
+    padding: 0 20px;
+    flex:2;
+  }
+  .inspiracion1 img{
+    height: 140px;
+    margin: 20px 4px;
+    border-radius: 50%;
+  }
+  .inspiracion2{
+    padding: 0 20px;
+    padding-left: 100px;
+    flex: 3;
+  }
+  .inspiracion2 h4{
+    font-size: 34px;
+    margin-bottom: 10px;
+    margin-top: 40px;
+  }
+  .inspiracion2 p{
+    font-size: 16px;
+  }
+
+  #unete{
+    display: flex;
+    padding: 20px 100px;
+    background-color: rgb(95, 0, 20);
+  }
+
+  .union{
+    flex: 1;
+    margin: 20px;
+    padding: 10px 7vw 15px 20px;
+    border-radius: 20px;
+    background-color: rgba(128, 128, 128, 0.2);
+    text-align: justify;
+    min-height: 50vh;
+  }
+
+  .U2{
+    font-weight: 500;
+    background-image: url(IMG/kraken.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: black;
+  }
+
+  .botonesunete{
+    height: 100px;
+    width: 100px;
+    background-color: black;
+    padding: 23px 5px 5px 5px;
+    margin: 0 25px;
+    border-radius: 40px;
+  }
+  .botonesunete:hover{
+    background-color: var(--button-hover-bg-color);
+  }
+
+  .botonesunete img{
+    height: 30px;
+  }
+
+  #pie{
+    display: flex;
+    background-color: var(--background-color);
+    margin: 0 10vw;
+  }
+
+  #pie a{
+    color: rgb(255, 255, 192);
+    text-decoration: none;
+  }
+
+  .pies{
+    flex: 1;
+    gap: 20px;
+    padding: 5px 20px;
+  }
+
+  .pies ol:hover{
+    text-decoration: underline;
+    text-shadow: 0 0 40px var(--button-hover-bg-color);
+    color: white;
+  }
+
+  footer{
+    text-align: center;
+    padding: 1px;
+    background-color: var(--header-bg-color);
+  }
+
+@media screen and (max-width: 768px) {
+  /* Header */
+  .header-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  #Presentacion {
+    padding: 10px 20px;
+  }
+
+  #Inicio {
+    flex-direction: column; /* Cambia de fila a columna */
+    gap: 10px;
+    padding: 15px;
+  }
+
+  .C1 {
+    font-size: 1.2rem; /* Letra más pequeña */
+    padding: 0;
+    margin: 0;
+    margin-left: 30%;
+    text-align: left;
+    max-height: 10%;
+  }
+
+  .C2 {
+    text-align: center;
+    padding: 10px;
+  }
+
+  .C2 img {
+    height: 30vh; /* Imagen más pequeña */
+    max-width: 100%;
+    margin-left: 0;
+  }
+
+  .C2 a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
+
+  #logotext {
+    margin-left: 0;
+    margin-bottom: 10px;
+    width: 120px;
+    height: auto;
+  }
+
+  #imgboton {
+    height: 0;
+  }
+
+
+  /* Categorías */
+  #categorias {
+    grid-template-columns: 1fr;
+    margin: 1rem auto;
+    gap: 2rem;
+  }
+
+  .categoria {
+    height: auto;
+  }
+
+  /* Inspiración */
+  #inspiracion {
+    flex-direction: column;
+    margin: 10px;
+    padding: 10px;
+  }
+
+  .inspiracion2 {
+    padding-left: 20px;
+  }
+
+  .inspiracion2 h4 {
+    font-size: 24px;
+  }
+
+  .inspiracion2 p {
+    font-size: 14px;
+  }
+
+  /* Únete */
+  #unete {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .union {
+    padding: 20px;
+    margin: 10px 0;
+  }
+
+  .botonesunete {
+    height: 80px;
+    width: 80px;
+    margin: 10px auto;
+  }
+
+  .botonesunete img {
+    height: 24px;
+  }
+
+  /* Pie de página */
+  #pie {
+    flex-direction: column;
+    margin: 0;
+    padding: 10px;
+  }
+
+  .pies {
+    padding: 10px;
+    text-align: center;
+  }
+}
