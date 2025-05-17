@@ -1,3 +1,4 @@
+/* Paleta de colores */
 :root {
     --background-color: #1a0825;  /* Morado oscuro */
     --text-color: #e0e0e0;       /* Texto claro */
@@ -461,3 +462,4 @@
     text-align: center;
   }
 }
+
